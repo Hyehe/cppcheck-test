@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.20.0"/>
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="main.cpp" line="1" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cstring&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;cstring&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="main.cpp" line="2" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cstdlib&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;cstdlib&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="main.cpp" line="3" column="2"/>
+        </error>
+        <error id="bufferAccessOutOfBounds" severity="error" msg="Buffer is accessed out of bounds: dest" verbose="Buffer is accessed out of bounds: dest" cwe="788" file0="main.cpp">
+            <location file="main.cpp" line="19" column="12" info="Buffer overrun"/>
+        </error>
+        <error id="getsCalled" severity="warning" msg="Obsolete function &apos;gets&apos; called. It is recommended to use &apos;fgets&apos; or &apos;gets_s&apos; instead." verbose="The obsolete function &apos;gets&apos; is called. With &apos;gets&apos; you&apos;ll get a buffer overrun if the input data exceeds the size of the buffer. It is recommended to use the functions &apos;fgets&apos; or &apos;gets_s&apos; instead." cwe="477" file0="main.cpp">
+            <location file="main.cpp" line="12" column="5"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: ptr" verbose="Memory leak: ptr" cwe="401" file0="main.cpp">
+            <location file="main.cpp" line="34" column="1"/>
+            <symbol>ptr</symbol>
+        </error>
+        <error id="nullPointerOutOfMemory" severity="warning" msg="If memory allocation fails, then there is a possible null pointer dereference: ptr" verbose="If memory allocation fails, then there is a possible null pointer dereference: ptr" cwe="476" file0="main.cpp">
+            <location file="main.cpp" line="32" column="5" info="Null pointer dereference"/>
+            <location file="main.cpp" line="31" column="16" info="Assignment &apos;ptr=(int*)malloc(sizeof(int)*100)&apos;, assigned value is 0"/>
+            <location file="main.cpp" line="31" column="28" info="Assuming allocation function fails"/>
+            <symbol>ptr</symbol>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="main.cpp">
+            <location file="main.cpp" line="18" column="17"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="main.cpp">
+            <location file="main.cpp" line="31" column="16"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;src&apos; can be declared as pointer to const" verbose="Variable &apos;src&apos; can be declared as pointer to const" cwe="398" file0="main.cpp">
+            <location file="main.cpp" line="18" column="11" info="Variable &apos;src&apos; can be declared as pointer to const"/>
+            <symbol>src</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;input&apos; can be declared as pointer to const" verbose="Parameter &apos;input&apos; can be declared as pointer to const" cwe="398" file0="main.cpp">
+            <location file="main.cpp" line="23" column="23" info="Parameter &apos;input&apos; can be declared as pointer to const"/>
+            <symbol>input</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;runCommand&apos; is never used." verbose="The function &apos;runCommand&apos; is never used." cwe="561">
+            <location file="main.cpp" line="23" column="6"/>
+            <symbol>runCommand</symbol>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 173/186 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 173/186 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>
